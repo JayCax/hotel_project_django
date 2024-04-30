@@ -1,5 +1,7 @@
-from django.db import models
 from datetime import time
+
+from django.db import models
+
 
 class Room(models.Model):
     room_number = models.IntegerField(unique=True)
@@ -21,7 +23,6 @@ class Client(models.Model):
     start_of_stay = models.DateField()
     duration_of_stay = models.IntegerField(default=1)
     check_in_time = models.TimeField(default=time(4))
-
 
     def __str__(self):
         return f"{self.name} starts their stay at {self.start_of_stay} for {self.duration_of_stay} nights"

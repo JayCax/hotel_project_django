@@ -1,6 +1,7 @@
+from datetime import datetime
+
 from django.http import HttpResponse
 from django.shortcuts import render
-from datetime import datetime
 
 from hotel.models import Client
 
@@ -14,8 +15,10 @@ def welcome(request):
                    "guest_count": Client.objects.count(),
                    "clients": Client.objects.all()})
 
+
 def date(request):
     return HttpResponse("This page was served at " + str(datetime.now))
+
 
 def about_me(request):
     return HttpResponse("Hello everyone! My name is John!")

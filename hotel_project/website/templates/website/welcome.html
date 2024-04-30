@@ -5,27 +5,30 @@
     <title>Welcome!</title>
 </head>
 <body>
-    <h1>Welcome to John's Hotel!</h1>
-    <p>
-        <b>We Pride Ourselves on Luxury & Hope You Will Enjoy Your Stay !</b>
-    </p>
-    <p>
-        {{message}}
-    </p>
-    <p>
-        There are currently {{guest_count}} guest(s) staying at John's Hotel: Island Paradise Property
-    </p>
+<h1>Welcome to John's Hotel!</h1>
+<p>
+    <b>We Pride Ourselves on Luxury & Hope You Will Enjoy Your Stay !</b>
+</p>
+<p>
+    {{message}}
+</p>
+<p>
+    There are currently {{guest_count}} guest(s) staying at John's Hotel: Island Paradise Property
+</p>
 
-    <h2>Clients Staying in the Hotel:</h2>
-    <ul>
-        {% for client in clients %}
-            <li>
-                <a href ="/hotel/{{client.id}}">
-                    {{ client.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+<h2>Clients Staying in the Hotel:</h2>
+<ul>
+    {% for client in clients %}
+    <li>
+        <!--        <a href="/hotel/{{client.id}}">-->
+        <a href="{% url 'detail' client.id %}">
+            {{ client.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'rooms' %}">Our Featured Room Options</a>
 
 </body>
 </html>
