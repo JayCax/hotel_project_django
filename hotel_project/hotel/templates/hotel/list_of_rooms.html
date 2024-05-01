@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rooms</title>
-</head>
+{% extends "base.html" %}
+
+{% block title %}Rooms{% endblock %}
+{% load static %}
+
+{% block content %}
 <body>
 <h1>List of Rooms Featured in John's Island Paradise Hotel</h1>
 
@@ -16,5 +16,6 @@
     {% endfor %}
 </ul>
 
-</body>
-</html>
+<a href="{% url 'welcome' %}">Home</a>
+
+{% endblock %}

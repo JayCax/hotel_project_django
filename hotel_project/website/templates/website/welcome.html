@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome!</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
 <h1>Welcome to John's Hotel!</h1>
 <p>
     <b>We Pride Ourselves on Luxury & Hope You Will Enjoy Your Stay !</b>
 </p>
+<img src="{% static 'website/island_paradise.jpeg' %}" width="400px">
 <p>
     {{message}}
 </p>
@@ -30,5 +30,4 @@
 
 <a href="{% url 'rooms' %}">Our Featured Room Options</a>
 
-</body>
-</html>
+{% endblock %}

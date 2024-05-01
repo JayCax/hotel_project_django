@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Client: {{client.name}}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Client: {{client.name}}{% endblock %}
+{% load static %}
+
+{% block content %}
 <h1>{{client.name}}</h1>
 <p>
     <strong>{{client.name}}</strong> will stay in <strong>room {{client.room.room_number}} for
@@ -13,5 +12,4 @@
 
 <a href="{% url 'welcome' %}">Home</a>
 
-</body>
-</html>
+{% endblock %}
