@@ -4,6 +4,8 @@ from django.db import models
 
 
 class Room(models.Model):
+    booking_start = models.DateField()
+    booking_duration = models.IntegerField(default=1)
     room_number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
     # Add more fields as needed
